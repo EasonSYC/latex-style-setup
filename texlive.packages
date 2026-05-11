@@ -22,5 +22,4 @@ makecell
 fontawesome6
 esint
 
-algorithm
-minted
+siunitx
