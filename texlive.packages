@@ -25,6 +25,9 @@ esint
 
 siunitx
 
+minted
+
 algorithms
 algpseudocodex
 algorithmicx
+fifo-stack
