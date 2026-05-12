@@ -33,6 +33,9 @@ runs:
       ln -s ${{ github.workspace }}/latex-style/eason.sty ${{ env.texmf_home }}/tex/latex/local/eason.sty
       ln -s ${{ github.workspace }}/latex-style/macros.tex ${{ env.texmf_home }}/tex/latex/local/macros.tex
 
+  - name: Confirm Style Files can be Found
+    shell: bash
+    run: |
       kpsewhich eason.sty
       kpsewhich macros.tex
 
