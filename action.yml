@@ -3,14 +3,27 @@ description: "Setup TeX Live in EasonSYC/latex-style"
 
 runs:
   using: "composite"
+
   steps:
-  
+
+  - name: Checkout latex-style
+    uses: actions/checkout@v6
+    with:
+      repository: EasonSYC/latex-style
+      path: latex-style
+
   - name: Install TeX Live
     uses: zauguin/install-texlive@v4
     with:
       package_file: ${{ github.action_path }}/texlive.packages
 
-  - name: Install python
+  - name: Link Style Files
+    shell: bash
+    run: |
+      ln -s 'latex-style/eason.sty' '~/texmf/tex/latex/local/eason.sty'
+      ln -s 'latex-style/macros.tex' '~/texmf/tex/latex/local/macros.tex'
+
+  - name: Install Python
     uses: actions/setup-python@v6
     with:
       python-version: '3.13'
