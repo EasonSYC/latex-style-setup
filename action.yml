@@ -30,8 +30,8 @@ runs:
   - name: Link Style Files
     shell: bash
     run: |
-      ln -s latex-style/eason.sty ${{ env.texmf_home }}/tex/latex/local/eason.sty
-      ln -s latex-style/macros.tex ${{ env.texmf_home }}/tex/latex/local/macros.tex
+      ln -s ${{ github.workspace }}/latex-style/eason.sty ${{ env.texmf_home }}/tex/latex/local/eason.sty
+      ln -s ${{ github.workspace }}/latex-style/macros.tex ${{ env.texmf_home }}/tex/latex/local/macros.tex
 
       kpsewhich eason.sty
       kpsewhich macros.tex
