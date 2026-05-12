@@ -22,11 +22,14 @@ runs:
     run: |
       echo "texmf_home=$(kpsewhich -var-value TEXMFHOME)" >> $GITHUB_ENV
 
-  - name: Link Style Files
+  - name: Create TeX Local Directory
     shell: bash
     run: |
       mkdir -p ${{ env.texmf_home }}/tex/latex/local
 
+  - name: Link Style Files
+    shell: bash
+    run: |
       ln -s latex-style/eason.sty ${{ env.texmf_home }}/tex/latex/local/eason.sty
       ln -s latex-style/macros.tex ${{ env.texmf_home }}/tex/latex/local/macros.tex
 
