@@ -17,13 +17,17 @@ runs:
     with:
       package_file: ${{ github.action_path }}/texlive.packages
 
-  - name: Link Style Files
+  - name: Get texmf Path
     shell: bash
     run: |
       texmf_home=$(kpsewhich -var-value=TEXMFHOME)
       echo $texmf_home
-
+      
       mkdir -p $texmf_home/tex/latex/local
+
+  - name: Link Style Files
+    shell: bash
+    run: |
       ln -s latex-style/eason.sty $texmf_home/tex/latex/local/eason.sty
       ln -s latex-style/macros.tex $texmf_home/tex/latex/local/macros.tex
 
