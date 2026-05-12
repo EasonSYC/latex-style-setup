@@ -20,10 +20,15 @@ runs:
   - name: Link Style Files
     shell: bash
     run: |
-      kpsewhich -var-value=TEXMFHOME
-      mkdir -p '~/texmf/tex/latex/local'
-      ln -s 'latex-style/eason.sty' '~/texmf/tex/latex/local/eason.sty'
-      ln -s 'latex-style/macros.tex' '~/texmf/tex/latex/local/macros.tex'
+      texmf-home=kpsewhich -var-value=TEXMFHOME
+      echo $texmf-home
+
+      mkdir -p 'texmt-home/tex/latex/local'
+      ln -s 'latex-style/eason.sty' '$texmf-home/tex/latex/local/eason.sty'
+      ln -s 'latex-style/macros.tex' '$texmf-home/tex/latex/local/macros.tex'
+
+      kpsewhich eason.sty
+      kpsewhich macros.tex
 
   - name: Install Python
     uses: actions/setup-python@v6
