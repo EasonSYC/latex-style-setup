@@ -20,16 +20,15 @@ runs:
   - name: Get texmf Path
     shell: bash
     run: |
-      texmf_home=$(kpsewhich -var-value=TEXMFHOME)
-      echo $texmf_home
-      
-      mkdir -p $texmf_home/tex/latex/local
+      echo "texmf_home=$(kpsewhich -var-value TEXMFHOME)" >> $GITHUB_ENV
 
   - name: Link Style Files
     shell: bash
     run: |
-      ln -s latex-style/eason.sty $texmf_home/tex/latex/local/eason.sty
-      ln -s latex-style/macros.tex $texmf_home/tex/latex/local/macros.tex
+      mkdir -p ${{ env.texmf_home }}/tex/latex/local
+
+      ln -s latex-style/eason.sty ${{ env.texmf_home }}/tex/latex/local/eason.sty
+      ln -s latex-style/macros.tex ${{ env.texmf_home }}/tex/latex/local/macros.tex
 
       kpsewhich eason.sty
       kpsewhich macros.tex
