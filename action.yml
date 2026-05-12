@@ -20,6 +20,7 @@ runs:
   - name: Link Style Files
     shell: bash
     run: |
+      mkdir -p '~/texmf/tex/latex/local'
       ln -s 'latex-style/eason.sty' '~/texmf/tex/latex/local/eason.sty'
       ln -s 'latex-style/macros.tex' '~/texmf/tex/latex/local/macros.tex'
 
