@@ -44,6 +44,14 @@ runs:
     with:
       python-version: '3.14'
 
+  - name: Cache pip
+    uses: actions/cache@v4
+    with:
+      path: ~/cache/.pip
+      key: ${{ runner.os }}-pip-${{ hashFiles('${{ github.action_path }}/requirements.txt') }}
+      restore-keys: |
+        ${{ runner.os }}-pip-
+
   - name: Install Pygments
     shell: bash
     run: pip install -r ${{ github.action_path }}/requirements.txt
