@@ -39,23 +39,23 @@ runs:
       kpsewhich eason.sty
       kpsewhich macros.tex
 
-  - name: Install Python
-    uses: actions/setup-python@v6
-    with:
-      python-version: '3.14'
+  # - name: Install Python
+  #   uses: actions/setup-python@v6
+  #   with:
+  #     python-version: '3.14'
   
-  - name: Compute Requirements Hash
-    shell: bash
-    run: echo "pip_hash=$(sha256sum ${{ github.action_path }}/requirements.txt | cut -d' ' -f1)" >> $GITHUB_ENV
+  # - name: Compute Requirements Hash
+  #   shell: bash
+  #   run: echo "pip_hash=$(sha256sum ${{ github.action_path }}/requirements.txt | cut -d' ' -f1)" >> $GITHUB_ENV
 
-  - name: Cache pip
-    uses: actions/cache@v5
-    with:
-      path: ~/.cache/pip
-      key: ${{ runner.os }}-pip-${{ env.pip_hash }}
-      restore-keys: |
-        ${{ runner.os }}-pip-
+  # - name: Cache pip
+  #   uses: actions/cache@v5
+  #   with:
+  #     path: ~/.cache/pip
+  #     key: ${{ runner.os }}-pip-${{ env.pip_hash }}
+  #     restore-keys: |
+  #       ${{ runner.os }}-pip-
 
-  - name: Install Pygments
-    shell: bash
-    run: pip install -r ${{ github.action_path }}/requirements.txt
+  # - name: Install Pygments
+  #   shell: bash
+  #   run: pip install -r ${{ github.action_path }}/requirements.txt
