@@ -5,6 +5,7 @@ physics
 
 pgfplots
 tikz-cd
+tikz-3dplot
 
 pdflscape
 pdfpages
