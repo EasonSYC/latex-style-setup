@@ -1,6 +1,7 @@
 scheme-basic
 latexmk
 
+beamer
 physics
 
 pgfplots
