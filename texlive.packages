@@ -32,6 +32,7 @@ fontawesome6
 esint
 
 siunitx
+hepnice
 
 minted
 
@@ -43,3 +44,5 @@ varwidth
 tabto-ltx
 totcount
 tikzmark
+
+xparse
