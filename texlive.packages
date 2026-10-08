@@ -1,13 +1,2 @@
-scheme-medium
-
+scheme-full
 latexmk
-
-pgfplots
-tikz-cd
-tikz-3dplot
-
-aliascnt
-wrapfig
-
-esint
-permute
