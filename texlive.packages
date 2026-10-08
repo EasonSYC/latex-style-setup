@@ -1,4 +1,5 @@
 scheme-medium
+
 latexmk
 
 pgfplots
@@ -9,3 +10,4 @@ aliascnt
 wrapfig
 
 esint
+permute
