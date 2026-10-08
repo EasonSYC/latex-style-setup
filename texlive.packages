@@ -1,2 +1,6 @@
 scheme-medium
 latexmk
+
+pgfplots
+tikz-cd
+tikz-3dplot
