@@ -4,3 +4,5 @@ latexmk
 pgfplots
 tikz-cd
 tikz-3dplot
+
+aliascnt
