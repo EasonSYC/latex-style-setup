@@ -25,6 +25,7 @@ environ
 thmbox
 enumitem
 float
+booktab
 
 mathtools
 stmaryrd
