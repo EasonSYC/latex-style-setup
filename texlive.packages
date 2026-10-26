@@ -3,6 +3,7 @@ latexmk
 
 beamer
 physics
+tensor
 
 pgfplots
 tikz-cd
